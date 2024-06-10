@@ -1,0 +1,7 @@
+<div class="custom-input-container" [ngClass]="{'error': (form.get(inputName)?.invalid && (form.get(inputName)?.touched || form.get(inputName)?.dirty)) || (form.get(inputName)?.errors?.required && form.get(inputName)?.touched)}">
+  <label class="custom-input-label" [ngClass]="{'required': required}">{{label}}</label>
+  <input class="custom-input" type="{{type}}" name="{{inputName}}" [(ngModel)]="value" [required]="required" [ngClass]="{'invalid': (form.get(inputName)?.invalid && (form.get(inputName)?.touched || form.get(inputName)?.dirty)) || (form.get(inputName)?.errors?.required && form.get(inputName)?.touched)}">
+  
+  <div class="error-message" *ngIf="(form.get(inputName)?.invalid && (form.get(inputName)?.touched || form.get(inputName)?.dirty)) || (form.get(inputName)?.errors?.required && form.get(inputName)?.touched)">{{errorMessage}}</div>
+</div>
+
